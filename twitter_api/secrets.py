@@ -1,10 +1,10 @@
-LOGIN = 'loucolonme@gmail.com'
-PASSWORD = 'bd0$7KoY4S7y'
-NAME = '@LouisColonMe'
+LOGIN = 'login'
+PASSWORD = 'password'
+NAME = '@name'
 
-BROWSER_PATH = 'C:\\Users\\Mans\\Selenium_Chrome_driver\\chromedriver.exe'
+BROWSER_PATH = 'browser_path'
 TWITTER_URL = 'https://twitter.com/login'
-PHONE_NUMBER = '79376128760'
+PHONE_NUMBER = 'phone_number'
 
 follow_path = '/html/body/div[1]/div/div/div[2]/main/div/div/div/div/div/div[3]/div/div/div/div/div[1]/div[2]/div/div[1]/div/div/span/span'
 acsept_cookies = '/html/body/div[1]/div/div/div[1]/div/div/div/div/div/div[2]/div[1]/div/span/span'
