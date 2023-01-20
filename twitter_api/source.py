@@ -29,6 +29,13 @@ options.set_capability("goog:loggingPrefs", {"performance": "ALL", "browser": "A
 class TwitterBot():
 
     def __init__(self,login:str, name:str, password:str, phone_number:str,headless:bool=False):
+        
+        ''' First four parametres is needed for authorisation to get or update cookies for
+            twitter account.
+            
+            Headless parametr is responsible for adding headless mode to the options of webdriwer.
+            With it there will be no poping up browser windows and code will be faster in general
+        '''
 
         self.login = login
         self.name = name
@@ -48,7 +55,12 @@ class TwitterBot():
     
 
 
-    def get_cookies(self) -> Chrome:
+    def get_cookies(self):
+        
+        ''' Authorise in Twitter for getting cookies of this account.
+            This cookie-files will be used in another operation to make them faster
+            Cookie-files will be saved in /cookie folder, named like {account_login}_cookes
+        '''
 
         browser = self.bot
         
@@ -112,6 +124,9 @@ class TwitterBot():
 
     def follow(self, url:str):
         
+        ''' It could follow to the given twitter account
+            using taken cookies.
+        '''
         browser = self.bot
         browser.get(url)
         sleep(random.random()+2)
@@ -135,6 +150,13 @@ class TwitterBot():
 
 
     def like_and_retwit(self, follow:bool=False):
+        
+        ''' This method can be used to solve all the competition tasks given on Premint.com by Kaoryu Tamago.
+            It could like and retwit twitter post which is actual for competition now. To do this it doesn't need 
+            any other parameters or any user intervensions - all needed data code will receice on 'premint.xyz/kaoryu-tamago/' website. 
+            
+            It also could  follow to the twitter account of competiotion creator if it's nessecary. follow parametr is responcible for this.       
+        '''
         
         browser = self.bot
         browser.get('https://www.premint.xyz/kaoryu-tamago/')
@@ -252,7 +274,7 @@ class TwitterBot():
             except:
                 print("Premint.xyz not authorised!")
 
-        sleep(20)
+        sleep(15+random.random())
         browser.close()
         browser.quit()
 
